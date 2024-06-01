@@ -33,7 +33,7 @@ jobs:
       run: ctest --output-on-failure
       
 
-  build-singularity:
+ build-singularity:
     runs-on: ubuntu-latest
     needs: build-and-test
 
@@ -54,7 +54,6 @@ jobs:
     - name: Build Singularity image
       run: |
         singularity build --fakeroot matrix_multiplication.sif Singularity.def
-
 
     - name: Upload Singularity image
       uses: actions/upload-artifact@v2

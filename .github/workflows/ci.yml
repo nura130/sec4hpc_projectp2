@@ -23,8 +23,13 @@ jobs:
     - uses: actions/checkout@v2
     - name: Set up MPI
       run: sudo apt-get install -y mpich
+ #   - name: Install dependencies
+ #     run: sudo apt-get install -y cmake g++
     - name: Install dependencies
-      run: sudo apt-get install -y cmake g++
+      run: |
+        sudo apt-get install -y cmake g++
+        export DEBIAN_FRONTEND=noninteractive  # Set DEBIAN_FRONTEND to noninteractive
+        sudo apt-get install -y singularity-container
     - name: Configure
       run: cmake .
     - name: Build

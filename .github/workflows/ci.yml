@@ -39,17 +39,29 @@ jobs:
     needs: build-and-test
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
     - name: Install Singularity
       run: |
         sudo apt-get update
         sudo apt-get install -y singularity-container
+
+    - name: Add GPG key for NeuroDebian repository
+      run: |
+        sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys A5D32F012649A5A9
+
+    - name: Retry installation of Singularity
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y singularity-container
+
     - name: Build Singularity image
       run: |
         singularity build matrix_multiplication.sif Singularity.def
+
     - name: Upload Singularity image
       uses: actions/upload-artifact@v2
       with:
         name: matrix_multiplication.sif
         path: matrix_multiplication.sif
-

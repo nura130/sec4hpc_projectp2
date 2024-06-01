@@ -9,7 +9,7 @@ From: ubuntu:20.04
         git
     mkdir /app
     cd /app
-    git clone https://github.com/YOUR_USERNAME/SE4HPC_project_part2.git
+    git clone https://github.com/nura130/SE4HPC_project_part2.git
     cd SE4HPC_project_part2
     cmake .
     make

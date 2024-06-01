@@ -13,6 +13,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        submodules: true      
+        submodules_recursive: true  
+        fetch-depth: 0
+        
     - uses: actions/checkout@v2
     - name: Set up MPI
       run: sudo apt-get install -y mpich
@@ -25,12 +32,7 @@ jobs:
     - name: Run tests
       run: ctest --output-on-failure
       
-    - name: Checkout repository
-      uses: actions/checkout@v3
-      with:
-        submodules: true      
-        submodules_recursive: true  
-        fetch-depth: 0
+
 
   build-singularity:
     runs-on: ubuntu-latest

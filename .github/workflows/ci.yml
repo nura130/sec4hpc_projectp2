@@ -23,6 +23,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Set up MPI
       run: sudo apt-get install -y mpich
+    - name: Pre-configure tzdata 
+      run: | 
+       echo 'tzdata tzdata/Areas select Etc' | sudo debconf-set-selections 
+       echo 'tzdata tzdata/Zones/Etc select UTC' | sudo debconf-set-selections 
+       sudo DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata 
  #   - name: Install dependencies
  #     run: sudo apt-get install -y cmake g++
     - name: Install dependencies

@@ -66,7 +66,7 @@ jobs:
 
     - name: Build Singularity image
       run: |
-        sudo singularity build matrix_multiplication.sif Singularity.def
+        sudo DEBIAN_FRONTEND=noninteractive singularity build matrix_multiplication.sif Singularity.def
 
     - name: Verify Singularity image
       run: singularity inspect matrix_multiplication.sif

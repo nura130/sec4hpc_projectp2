@@ -74,7 +74,7 @@ jobs:
         run: singularity --help 
       
       - name: Build Singularity image 
-        run: sudo singularity build --fakeroot matrix_multiplication.sif Singularity.def 
+        run: sudo singularity build matrix_multiplication.sif Singularity.def 
       
       - name: Verify Singularity image 
         run: singularity inspect matrix_multiplication.sif 

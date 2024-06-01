@@ -15,3 +15,4 @@ void multiplyMatricesWithoutErrors(const std::vector<std::vector<int>> &A,
     }
   }
 }
+

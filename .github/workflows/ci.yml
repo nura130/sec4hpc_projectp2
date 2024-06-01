@@ -48,6 +48,7 @@ jobs:
         git clone https://github.com/hpcng/singularity.git
         cd singularity
         git checkout v3.8.0  # Choose the desired version
+        export DEBIAN_FRONTEND=noninteractive  # Set DEBIAN_FRONTEND to noninteractive
         ./mconfig && make -C builddir && sudo make -C builddir install
 
     - name: Build Singularity image

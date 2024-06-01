@@ -9,8 +9,8 @@ From: ubuntu:20.04
         git
     mkdir /app
     cd /app
-    git clone https://github.com/nura130/SE4HPC_project_part2.git
-    cd SE4HPC_project_part2
+    git clone --recurse-submodules https://github.com/nura130/sec4hpc_projectp2.git
+    cd sec4hpc_projectp2
     cmake .
     make
 

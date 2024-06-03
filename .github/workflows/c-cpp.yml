@@ -110,8 +110,8 @@ jobs:
 
       - name: Transfer files to cluster
         run: |
-          scp matrix_multiplication.sif ${{ secrets.CLUSTER_USERNAME }}@${{ secrets.CLUSTER_HOST }}:/path/to/remote/directory/
-          scp job.sh ${{ secrets.CLUSTER_USERNAME }}@${{ secrets.CLUSTER_HOST }}:/path/to/remote/directory/
+          scp matrix_multiplication.sif ${{ secrets.CLUSTER_USERNAME }}@${{ secrets.CLUSTER_HOST }}:/g100/home/usertrain/a08trb52
+          scp job.sh ${{ secrets.CLUSTER_USERNAME }}@${{ secrets.CLUSTER_HOST }}:/g100/home/usertrain/a08trb52
 
       - name: Submit job to SLURM
         run: |

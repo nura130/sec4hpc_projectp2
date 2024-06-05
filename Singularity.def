@@ -16,4 +16,4 @@ From: ubuntu:20.04
     make
 
 %runscript
-    exec mpirun -np 4 ./src/matrix_mult.cpp matrixA.txt matrixB.txt
+    exec mpirun -np 2 ./src/matrix_mult.cpp matrixA.txt matrixB.txt

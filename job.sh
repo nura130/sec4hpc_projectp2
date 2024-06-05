@@ -3,9 +3,9 @@
 #SBATCH --job-name=matrix_multiplication
 #SBATCH --output=output.txt
 #SBATCH --error=error.txt
-#SBATCH --ntasks=2  # Adjust the number of tasks as needed
-#SBATCH --time=02:00  # Set a reasonable time limit
-#SBATCH --partition=g100_all_serial  # Specify the partition, adjust if necessary
+#SBATCH --ntasks=2  # tasks as needed
+#SBATCH --time=02:00  # time limit
+#SBATCH --partition=g100_all_serial  
 
 #Load Singularity
 module load singularity

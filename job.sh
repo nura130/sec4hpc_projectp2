@@ -10,11 +10,11 @@
 #Load Singularity
 module load singularity
 
-# Define paths to input matrices
+# Defined paths to input matrices
 MATRIX_A="matrixA.txt"
 MATRIX_B="matrixB.txt"
 
-# Define path to Singularity container
+# Defined path to Singularity container
 CONTAINER_IMAGE="matrix_multiplication.sif"
 
 # Run the compiled executable inside the Singularity container
